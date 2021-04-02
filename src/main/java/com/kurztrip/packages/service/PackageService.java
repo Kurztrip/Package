@@ -1,50 +1,26 @@
 package com.kurztrip.packages.service;
 
-import com.kurztrip.packages.http.Http;
 import com.kurztrip.packages.model.Package;
+import com.kurztrip.packages.repository.PackageRepository;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.util.Optional;
 
 @Service
 public class PackageService {
-    private final Http httpClient = new Http();
+    private final PackageRepository packageRepository;
 
-    public PackageService() {
+    public PackageService(PackageRepository packageRepository) {
+        this.packageRepository = packageRepository;
     }
 
-    public String getAll() throws IOException, InterruptedException {
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .GET()
-                .uri(URI.create(""))
-                .setHeader("Content-type", "application/json")
-                .build();
-        HttpResponse<String> response = httpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+    public Iterable<Package> findAll(){ return packageRepository.findAll();}
 
-        return response.body();
-    }
+    public Optional<Package> findById(Integer id){ return packageRepository.findById(id);}
 
-    public String getPackage(int id) throws IOException, InterruptedException { // uri = uri del servidor
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .GET()
-                .uri(URI.create(""+ id))
-                .setHeader("Content-type", "application/json")
-                .build();
-        HttpResponse<String> response = httpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
+    public Package save(Package pack){ return packageRepository.save(pack);}
 
-        return response.body();
-    }
+    public void deleteById(Integer id){ packageRepository.deleteById(id);}
 
-    public void deletePackage(int id) throws IOException, InterruptedException {
-        HttpRequest httpRequest = HttpRequest.newBuilder()
-                .DELETE()
-                .uri(URI.create(""+ id))
-                .setHeader("Content-type", "application/json")
-                .build();
-        HttpResponse<String> response = httpClient.getHttpClient().send(httpRequest, HttpResponse.BodyHandlers.ofString());
-    }
 
 }

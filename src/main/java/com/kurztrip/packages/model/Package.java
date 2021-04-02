@@ -1,29 +1,43 @@
 package com.kurztrip.packages.model;
 
-import com.kurztrip.packages.http.Http;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import com.sun.istack.NotNull;
 
-public class Package {
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "Package")
+public class Package implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+
+    @NotNull
+    @Column(name = "address")
     private String adress;
+
+    @NotNull
+    @Column(name = "weight")
     private double weight;
+
+    @NotNull
+    @Column(name = "volume")
     private double volume;
+
+    @NotNull
+    @Column(name = "longitude")
     private String latitude;
+
+    @NotNull
+    @Column(name = "latitude")
     private String longitude;
 
+
+
     public Package() {
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAdress() {
