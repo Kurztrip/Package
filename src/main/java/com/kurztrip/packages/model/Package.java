@@ -35,7 +35,9 @@ public class Package implements Serializable {
     @Column(name = "latitude")
     private String longitude;
 
-
+    @NotNull
+    @Column(name = "storeId")
+    private int storeId;
 
     public Package() {
     }
@@ -78,6 +80,14 @@ public class Package implements Serializable {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public int getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(int storeId) {
+        this.storeId = storeId;
     }
 
 
