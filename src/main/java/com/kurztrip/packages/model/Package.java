@@ -29,11 +29,11 @@ public class Package implements Serializable {
 
     @NotNull
     @Column(name = "longitude")
-    private String latitude;
+    private float latitude;
 
     @NotNull
     @Column(name = "latitude")
-    private String longitude;
+    private float longitude;
 
     @NotNull
     @Column(name = "storeId")
@@ -66,19 +66,19 @@ public class Package implements Serializable {
         this.volume = volume;
     }
 
-    public String getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
