@@ -17,15 +17,15 @@ public class Package implements Serializable {
 
     @NotNull
     @Column(name = "address")
-    private String adress;
+    private String address;
 
     @NotNull
     @Column(name = "weight")
-    private double weight;
+    private float weight;
 
     @NotNull
     @Column(name = "volume")
-    private double volume;
+    private float volume;
 
     @NotNull
     @Column(name = "longitude")
@@ -42,27 +42,27 @@ public class Package implements Serializable {
     public Package() {
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = adress;
     }
 
-    public double getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public double getVolume() {
+    public float getVolume() {
         return volume;
     }
 
-    public void setVolume(double volume) {
+    public void setVolume(float volume) {
         this.volume = volume;
     }
 

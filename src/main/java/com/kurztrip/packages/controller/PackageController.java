@@ -44,7 +44,7 @@ public class PackageController {
             return ResponseEntity.badRequest().body(null);
         }
         Package pack = optionalPackage.get();
-        pack.setAdress(requestPackage.getAdress());
+        pack.setAddress(requestPackage.getAddress());
         pack.setWeight(requestPackage.getWeight());
         pack.setVolume(requestPackage.getVolume());
         pack.setLatitude(requestPackage.getLatitude());
@@ -57,7 +57,7 @@ public class PackageController {
     @PostMapping(path = "/packages/add")
     public @ResponseBody ResponseEntity<Void> addNewPackage(@RequestBody RequestPackage requestPackage){
         Package pack = new Package();
-        pack.setAdress(requestPackage.getAdress());
+        pack.setAddress(requestPackage.getAddress());
         pack.setWeight(requestPackage.getWeight());
         pack.setVolume(requestPackage.getVolume());
         pack.setLatitude(requestPackage.getLatitude());
