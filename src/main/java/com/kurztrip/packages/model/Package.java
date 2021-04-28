@@ -42,6 +42,10 @@ public class Package implements Serializable {
     public Package() {
     }
 
+    public int getId(){
+        return id;
+    }
+
     public String getAddress() {
         return address;
     }

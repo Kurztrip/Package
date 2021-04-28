@@ -55,7 +55,7 @@ public class PackageController {
     }
 
     @PostMapping(path = "/packages/add")
-    public @ResponseBody ResponseEntity<Void> addNewPackage(@RequestBody RequestPackage requestPackage){
+    public @ResponseBody ResponseEntity<Package> addNewPackage(@RequestBody RequestPackage requestPackage){
         Package pack = new Package();
         pack.setAddress(requestPackage.getAddress());
         pack.setWeight(requestPackage.getWeight());
@@ -64,7 +64,7 @@ public class PackageController {
         pack.setLongitude(requestPackage.getLongitude());
         pack.setStoreId(requestPackage.getStoreId());
         Package saved = this.packageService.save(pack);
-        return  new ResponseEntity<>(HttpStatus.CREATED);
+        return ResponseEntity.ok(saved);
     }
 
     @DeleteMapping(path = "/packages/delete/{id}")
