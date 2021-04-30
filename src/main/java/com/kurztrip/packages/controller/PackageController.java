@@ -50,6 +50,8 @@ public class PackageController {
         pack.setLatitude(requestPackage.getLatitude());
         pack.setLongitude(requestPackage.getLongitude());
         pack.setStoreId(requestPackage.getStoreId());
+        pack.setReceiver(requestPackage.getReceiver());
+        pack.setIdReceiver(requestPackage.getIdReceiver());
         this.packageService.save(pack);
         return ResponseEntity.ok().body(pack);
     }
@@ -63,6 +65,8 @@ public class PackageController {
         pack.setLatitude(requestPackage.getLatitude());
         pack.setLongitude(requestPackage.getLongitude());
         pack.setStoreId(requestPackage.getStoreId());
+        pack.setReceiver(requestPackage.getReceiver());
+        pack.setIdReceiver(requestPackage.getIdReceiver());
         Package saved = this.packageService.save(pack);
         return ResponseEntity.ok(saved);
     }

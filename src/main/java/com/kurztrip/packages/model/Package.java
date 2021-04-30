@@ -39,6 +39,30 @@ public class Package implements Serializable {
     @Column(name = "storeId")
     private int storeId;
 
+    @NotNull
+    @Column(name = "receiver")
+    private String receiver;
+
+    @NotNull
+    @Column(name = "idReceiver")
+    private String idReceiver;
+
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    public String getIdReceiver() {
+        return idReceiver;
+    }
+
+    public void setIdReceiver(String idReceiver) {
+        this.idReceiver = idReceiver;
+    }
+
     public Package() {
     }
 
