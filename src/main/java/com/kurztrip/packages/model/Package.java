@@ -74,8 +74,8 @@ public class Package implements Serializable {
         return address;
     }
 
-    public void setAddress(String adress) {
-        this.address = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public float getWeight() {

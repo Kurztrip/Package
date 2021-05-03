@@ -38,7 +38,7 @@ public class PackageController {
     }
 
     @PutMapping(path = "/packages/update/{id}")
-    public ResponseEntity<Package>replacePackage(@PathVariable Integer id, @RequestBody RequestPackage requestPackage){
+    public ResponseEntity<Package> replacePackage(@PathVariable Integer id, @RequestBody RequestPackage requestPackage){
         Optional<Package> optionalPackage =this.packageService.findById(id);
         if(optionalPackage.isEmpty()){
             return ResponseEntity.badRequest().body(null);
